@@ -1,3 +1,111 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "react-hooks", "import"],
+  "rules": {
+    // Import
+    "import/order": ["error", { "groups": [["builtin", "external", "internal"]] }],
+    "import/named": "error",
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "error",
+    "import/no-useless-path-segments": "error",
+
+    // Possible errors - https://eslint.org/docs/rules/#possible-errors
+    "for-direction": "error",
+    "no-duplicate-imports": "error",
+    "no-console": "error",
+    "no-template-curly-in-string": "error",
+
+    // Possible errors - https://eslint.org/docs/latest/rules/#suggestions
+    "arrow-body-style": ["error", "as-needed"],
+
+    // others
+    "react/react-in-jsx-scope": "off",
+    "max-len": [
+      2,
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "comments": 100,
+        "ignoreUrls": true,
+        "ignorePattern": "(eslint-disable|@)"
+      }
+    ],
+    "react/function-component-definition": [
+      0,
+      {
+        "namedComponents": "function-expression"
+      }
+    ],
+
+    "complexity": [
+      "error",
+      {
+        "max": 10
+      }
+    ],
+    "max-lines": [
+      "error",
+      {
+        "max": 300,
+        "skipComments": true
+      }
+    ],
+    "max-depth": ["error", 2],
+    "max-params": ["error", 3],
+    "eqeqeq": ["error", "always"],
+    "no-alert": "error",
+    "no-else-return": "error",
+    "no-nested-ternary": "error",
+    "no-unneeded-ternary": "error",
+    "no-var": "error",
+    "default-case": "error",
+    "no-magic-numbers": [
+      "error",
+      { "ignore": [0, 1, -1, 2], "enforceConst": true }
+    ],
+    "curly": ["error", "all"],
+    "sort-imports": [
+      "error",
+      {
+        "allowSeparatedGroups": true,
+        "ignoreCase": true,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ]
+  },
+  "ignorePatterns": ["node_modules/", ".next/"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "components/*"],
+          ["@lib", "./lib"],
+          ["@images", "images/*"],
+          ["@core", "core/*"],
+          ["@styles", "core/*"]
+        ],
+        "extensions": [
+          ".js", ".jsx"]
+      }
+
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  }
 }
