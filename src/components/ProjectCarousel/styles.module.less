@@ -1,0 +1,27 @@
+.wrapper {
+  //position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.left_arrow {
+  cursor: pointer;
+  user-select: none;
+}
+
+.right_arrow {
+  cursor: pointer;
+  user-select: none;
+}
