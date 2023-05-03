@@ -1,4 +1,7 @@
 import { Avatar, Card, Col, Form, Input, Row } from 'antd'
+import SectionTitle from '@components/SectionTitle'
+
+import styles from './styles.module.less'
 
 const CharacterCard = () => {
 
@@ -8,46 +11,52 @@ const CharacterCard = () => {
 
   const renderInfoSection = () => (
     <>
+      <SectionTitle title={'INFO'}/>
       <Form.Item label='Character Name:'>
-        <Input/>
+        <Input className={styles.input}/>
       </Form.Item>
       <Form.Item label='Profession:'>
-        <Input/>
+        <Input className={styles.input}/>
       </Form.Item>
       <Form.Item label='About:'>
-        <Input/>
+        <Input className={styles.input_about}/>
       </Form.Item>
     </>
   )
 
   const renderContactSection = () => (
     <>
+      <SectionTitle title={'CONTACT'}/>
       <Form.Item label='Phone Number:'>
-        <Input/>
+        <Input className={styles.input}/>
       </Form.Item>
       <Form.Item label='Email:'>
-        <Input/>
+        <Input className={styles.input}/>
       </Form.Item>
     </>
   )
 
-  return (
+  const renderCard = () => (
     <Card>
-      <Row>
-        <Col span={6}>
-          {renderCharacterPicture()}
-        </Col>
-        <Form disabled>
+      <Form disabled>
+        <Row gutter={16}>
+          <Col span={6}>
+            {renderCharacterPicture()}
+          </Col>
           <Col span={9}>
             {renderInfoSection()}
           </Col>
           <Col span={9}>
             {renderContactSection()}
           </Col>
-        </Form>
-      </Row>
+        </Row>
+      </Form>
     </Card>
-    )
-  }
+  )
+
+  return (
+    renderCard()
+  )
+}
 
 export default CharacterCard
