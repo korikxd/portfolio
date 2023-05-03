@@ -25,17 +25,17 @@ const THIRD_PROJECT_TAGS = [
 export const PROJECTS = [
    {
       key: '1', title: 'First Project',
-      description: 'Some description above the project', tags: FIRST_PROJECT_TAGS,
+      description: 'Some description about the project', tags: FIRST_PROJECT_TAGS,
       website: '', sourceCode: ''
    },
    {
       key: '2', title: 'Second Project',
-      description: 'Some description above the project', tags: SECOND_PROJECT_TAGS,
+      description: 'Some description about the project', tags: SECOND_PROJECT_TAGS,
       website: '', sourceCode: ''
    },
    {
       key: '3', title: 'Third Project',
-      description: 'Some description above the project', tags: THIRD_PROJECT_TAGS,
+      description: 'Some description about the project', tags: THIRD_PROJECT_TAGS,
       website: '', sourceCode: ''
    },
 ]
