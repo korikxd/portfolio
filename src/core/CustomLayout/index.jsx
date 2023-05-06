@@ -1,22 +1,18 @@
 import { Layout } from 'antd'
 
-import CustomLayoutContent from './components/CustomLayoutContent'
-import CustomLayoutFooter from './components/CustomLayoutFooter'
-import CustomLayoutHeader from './components/CustomLayoutHeader'
+import NavigationMenu from '@components/commons/NavigationMenu'
+import styles from './styles.module.less'
 
-const { Header, Content, Footer } = Layout
+const { Header, Content } = Layout
 
-const CustomLayout = () => (
+const CustomLayout = ({children}) => (
   <Layout>
-    <Header>
-      <CustomLayoutHeader/>
+    <Header className={styles.header}>
+      <NavigationMenu/>
     </Header>
     <Content>
-      <CustomLayoutContent/>
+      {children}
     </Content>
-    <Footer>
-      <CustomLayoutFooter/>
-    </Footer>
   </Layout>
 )
 
