@@ -5,14 +5,16 @@ export const PortfolioContext = createContext()
 
 //Export provider
 export const PortfolioProvider = ({ children }) => {
-
+   const [currentTheme, setCurrentTheme] = useState('light')
    const [currentLanguage, setCurrentLanguage] = useState('ESPAÑOL')
 
    return (
       <PortfolioContext.Provider
          value={{
             currentLanguage,
-            setCurrentLanguage
+            setCurrentLanguage,
+            currentTheme,
+            setCurrentTheme
          }}
       >
          {children}
