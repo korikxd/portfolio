@@ -1,5 +1,5 @@
-import CustomLayout from '@core/CustomLayout'
+import HomePage from '@components/modules/HomePage'
 
-const HomePage = () => (<CustomLayout/>)
+const Home = () => (<HomePage/>)
 
-export default HomePage
+export default Home
