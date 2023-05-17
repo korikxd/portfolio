@@ -1,0 +1,36 @@
+.card_container {
+  margin: auto;
+  background-color: black;
+  background-size: cover;
+  cursor: pointer;
+  box-shadow: 0 0 5px #000;
+  -webkit-box-shadow: 0 0 5px #000;
+}
+
+.card_overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  background: rgba(77, 77, 77, .9);
+  opacity: 0;
+  transition: all 0.5s;
+  color: #FEF5DF;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.project_title {
+  transform: translateY(40px);
+  transition: all 0.7s;
+}
+
+.project_description {
+  transform: translateY(40px);
+  transition: all 0.7s;
+}
+
+.card_container:hover .card_overlay {
+  opacity: 1;
+}
