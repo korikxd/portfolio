@@ -10,48 +10,54 @@ const ExperienceCard = () => {
 
   const { currentLanguage } = usePortfolioContext()
 
-  const rightSection = (title, link, description, stack) => (
-    <>
-      <div>
-        {link ? <a href={link} target='_blank' rel='noopener noreferrer'>{title}</a> : <p>{title}</p>}
-        <p>{description}</p>
-        <div>{stack.map((technology, index) => <Tag key={index}>{technology.name}</Tag>)}</div>
-      </div>
-    </>
-  )
-
-  const renderTimeLine = () => {
-    if (currentLanguage === 'ESPAÑOL') {
-      return (
-        <Timeline mode='left'>
-          {
-            EXPERIENCES_SPANISH.map((job,index) => (
-              <Timeline.Item key={index} label={job.date}>
-                {rightSection(job.title, job.link, job.description, job.stack)}
-              </Timeline.Item>
-            ))
-          }
-        </Timeline>
-      )
-    }
+  const timelineChildrenItem = (props) => {
+    const { title, link, description, stack } = props
     return (
-      <Timeline mode='left'>
-        {
-          EXPERIENCES_ENGLISH.map((job,index) => (
-            <Timeline.Item key={index} label={job.date}>
-              {rightSection(job.title, job.link, job.description, job.stack)}
-            </Timeline.Item>
-          ))
-        }
-      </Timeline>
+      <div>
+        <a href={link !== '' ? link : null}>{title}</a>
+        <p>{description}</p>
+        <div>
+          {stack.map((technologie, index) => <Tag key={index}>{technologie.name}</Tag>)}
+        </div>
+      </div>
     )
   }
+
+  const spanishItems = [
+    {
+      label: EXPERIENCES_SPANISH[0].date,
+      children: timelineChildrenItem(EXPERIENCES_SPANISH[0])
+    },
+    {
+      label: EXPERIENCES_SPANISH[1].date,
+      children: timelineChildrenItem(EXPERIENCES_SPANISH[1])
+    },
+    {
+      label: EXPERIENCES_SPANISH[2].date,
+      children: timelineChildrenItem(EXPERIENCES_SPANISH[2])
+    }
+  ]
+
+  const englishItems = [
+    {
+      label: EXPERIENCES_ENGLISH[0].date,
+      children: timelineChildrenItem(EXPERIENCES_ENGLISH[0])
+    },
+    {
+      label: EXPERIENCES_ENGLISH[1].date,
+      children: timelineChildrenItem(EXPERIENCES_ENGLISH[1])
+    },
+    {
+      label: EXPERIENCES_ENGLISH[2].date,
+      children: timelineChildrenItem(EXPERIENCES_ENGLISH[2])
+    }
+  ]
 
   return (
     <>
       <h1>{currentLanguage === 'ESPAÑOL' ? 'Experiencia Laboral' : 'Work Experience'}</h1>
       <Card>
-        {renderTimeLine()}
+        <Timeline mode='left' items={currentLanguage === 'ESPAÑOL' ? spanishItems : englishItems}/>
       </Card>
     </>
   )
