@@ -1,5 +1,4 @@
 import { Col, Row } from 'antd'
-import CustomLayout from '@core/CustomLayout'
 import usePortfolioContext from '@lib/Context/PortfolioContext'
 
 import { ALL_PROJECTS, HORIZONTAL_GUTTER, VERTICAL_GUTTER } from './constants'
@@ -29,7 +28,7 @@ const ProjectsPage = () => {
   )
 
   return (
-    <CustomLayout>
+    <>
       <Row justify='center'>
         <Col>
           <h1>{currentLanguage === 'ESPAÑOL' ? 'PROYECTOS' : 'PROJECTS'}</h1>
@@ -40,7 +39,7 @@ const ProjectsPage = () => {
           {renderAllProjects(ALL_PROJECTS)}
         </Col>
       </Row>
-    </CustomLayout>
+    </>
   )
 }
 
