@@ -4,23 +4,22 @@ import NavigationMenu from '@components/commons/NavigationMenu'
 import Banner from './components/Banner'
 import NavigationButtons from './components/NavigationButtons'
 import SocialButtons from './components/SocialButtons'
-import styles from './styles.module.less'
 
 const { Header, Content, Footer } = Layout
 
 const HomePage = () => (
-  <Layout className={styles.home_layout_container}>
-    <Header className={styles.header}>
+  <Layout>
+    <Header>
       <NavigationMenu/>
     </Header>
-    <Content className={styles.home_content_container}>
+    <Content>
       <Row>
-        <Col span={24} className={styles.home_menu_banner_container}>
+        <Col span={24}>
           <Banner/>
         </Col>
       </Row>
       <Row>
-        <Col span={24} className={styles.home_navbuttons_socialbuttons_container}>
+        <Col span={24}>
           <NavigationButtons/>
           <SocialButtons/>
         </Col>

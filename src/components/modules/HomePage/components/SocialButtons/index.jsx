@@ -2,12 +2,10 @@ import { Button, Col, Row } from 'antd'
 import Link from 'next/link'
 import { SOCIAL_LINKS } from './constants'
 
-import styles from './styles.module.less'
-
 const SocialButtons = () => {
 
   const renderButtons = () => (
-    <Row gutter={8} justify='center' className={styles.socialbuttons_container}>
+    <Row gutter={8} justify='center'>
       {
         SOCIAL_LINKS.map((social, index) => (
           <Col key={index}>

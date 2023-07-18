@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 
-import styles from './styles.module.less'
-
 const SectionTitle = ({ sectionTitle }) => (
-  <button className={styles.container} disabled>
+  <button disabled>
     <span>{sectionTitle}</span>
   </button>
 )

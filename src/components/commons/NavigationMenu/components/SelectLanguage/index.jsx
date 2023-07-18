@@ -2,7 +2,6 @@ import { Select } from 'antd'
 import { usePortfolioContext } from '@lib/Context/PortfolioContext'
 
 import { LANGUAGES } from './constants'
-import styles from './styles.module.less'
 
 const SelectLanguage = () => {
 
@@ -12,7 +11,6 @@ const SelectLanguage = () => {
 
   return (
     <Select
-      className={styles.select_language}
       defaultValue={'ESPAÑOL'}
       value={currentLanguage}
       onChange={handleLanguageSelection}

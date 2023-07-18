@@ -2,8 +2,6 @@ import { IoMdMoon as MoonIcon } from 'react-icons/io'
 import { IoSunnyOutline as SunIcon } from 'react-icons/io5'
 import usePortfolioContext from '@lib/Context/PortfolioContext'
 
-import styles from './styles.module.less'
-
 const ThemeButton = () => {
 
   const { currentTheme, setCurrentTheme } = usePortfolioContext()
@@ -12,7 +10,6 @@ const ThemeButton = () => {
   return (
     <button
       type='button'
-      className={styles.theme_button}
       onClick={() => changeTheme(currentTheme)}
     >
       <svg

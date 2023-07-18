@@ -1,8 +1,6 @@
 import { ArrowUpOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
 
-import styles from './styles.module.less'
-
 const GoBackButton = () => {
 
   const scrollToTopOfPage = () => (
@@ -13,7 +11,6 @@ const GoBackButton = () => {
     <Button
       icon={<ArrowUpOutlined/>}
       onClick={scrollToTopOfPage}
-      className={styles.button}
     />
   )
 
