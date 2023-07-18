@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import SelectLanguage from './components/SelectLanguage'
 import ThemeButton from './components/ThemeButton'
 
-import styles from './styles.module.less'
 
 const NavigationMenu = () => {
 
@@ -18,18 +17,18 @@ const NavigationMenu = () => {
   )
 
   const defaultItems = () => (
-    <div className={styles.menu_container}>
+    <div>
       <div>
-        <Link href={'/'} className={styles.nav_item}>
+        <Link href={'/'}>
           {currentLanguage === 'ESPAÑOL' ? 'Inicio' : 'Home'}
         </Link>
-        <Link href={'/about'} className={styles.nav_item}>
+        <Link href={'/about'}>
           {currentLanguage === 'ESPAÑOL' ? 'Acerca' : 'About'}
         </Link>
-        <Link href={'/projects'} className={styles.nav_item}>
+        <Link href={'/projects'}>
           {currentLanguage === 'ESPAÑOL' ? 'Proyectos' : 'Projects'}
         </Link>
-        <Link href={'/contact'} className={styles.nav_item}>
+        <Link href={'/contact'}>
           {currentLanguage === 'ESPAÑOL' ? 'Contacto' : 'Contact'}
         </Link>
         {/* <SelectLanguage/> */}

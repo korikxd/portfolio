@@ -3,7 +3,6 @@ import { TagCloud } from 'react-tagcloud'
 import usePortfolioContext from '@lib/Context/PortfolioContext'
 
 import { SKILLS_COLLECTION } from './constants'
-import styles from './styles.module.less'
 
 const ExperienceCard = () => {
 
@@ -11,7 +10,6 @@ const ExperienceCard = () => {
 
   const renderTags = (tag, size, color) => (
     <span
-      className={styles.tag}
       style={{
         animationDelay: `${Math.random() * 2}s`,
         fontSize: `${size / 2}em`,

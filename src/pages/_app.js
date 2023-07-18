@@ -2,7 +2,7 @@ import { PortfolioProvider } from '@lib/Context/PortfolioContext'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'next-themes'
 
-require('./../styles/base.less')
+require('./../styles/globals.css')
 
 const MyApp = ({ Component, pageProps }) => (
    <ThemeProvider attribute='class' defaultTheme={'light'}>
