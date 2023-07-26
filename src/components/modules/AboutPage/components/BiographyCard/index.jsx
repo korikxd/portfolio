@@ -1,4 +1,3 @@
-import { Card } from 'antd'
 import usePortfolioContext from '@lib/Context/PortfolioContext'
 
 import {
@@ -13,11 +12,10 @@ import {
 } from './constants'
 
 const BiographyCard = () => {
-
   const { currentLanguage } = usePortfolioContext()
 
   const renderBiography = () => {
-    if ( currentLanguage === 'ESPAÑOL') {
+    if (currentLanguage === 'ESPAÑOL') {
       return (
         <>
           <p>{BIOGRAPHY_FIRST_PARAGRAPH_SPANISH}</p>
@@ -37,18 +35,26 @@ const BiographyCard = () => {
 
   const renderQuoteSection = () => {
     if (currentLanguage === 'ESPAÑOL') {
-      return (<blockquote>{MEME_QUOTE_SPANISH}<cite>~ Sun Tzu (Probablemente)</cite></blockquote>)
+      return (
+        <blockquote>
+          {MEME_QUOTE_SPANISH}
+          <cite>~ Sun Tzu (Probablemente)</cite>
+        </blockquote>
+      )
     }
-    return (<blockquote>{MEME_QUOTE_ENGLISH}<cite>~ Sun Tzu (Probably)</cite></blockquote>)
+    return (
+      <blockquote>
+        {MEME_QUOTE_ENGLISH}
+        <cite>~ Sun Tzu (Probably)</cite>
+      </blockquote>
+    )
   }
 
   return (
-    <>
-      <Card>
-        {renderBiography()}
-        {renderQuoteSection()}
-      </Card>
-    </>
+    <div>
+      {renderBiography()}
+      {renderQuoteSection()}
+    </div>
   )
 }
 

@@ -4,44 +4,37 @@ import { useRouter } from 'next/router'
 
 import SelectLanguage from './components/SelectLanguage'
 import ThemeButton from './components/ThemeButton'
-
+import { PAGE_ROUTES } from 'constants/routes'
 
 const NavigationMenu = () => {
-
   const { currentLanguage } = usePortfolioContext()
   const router = useRouter()
   const currentRoute = router.pathname
 
   const homeItems = () => (
-    null
-  )
-
-  const defaultItems = () => (
-    <div>
-      <div>
-        <Link href={'/'}>
-          {currentLanguage === 'ESPAÑOL' ? 'Inicio' : 'Home'}
-        </Link>
-        <Link href={'/about'}>
-          {currentLanguage === 'ESPAÑOL' ? 'Acerca' : 'About'}
-        </Link>
-        <Link href={'/projects'}>
-          {currentLanguage === 'ESPAÑOL' ? 'Proyectos' : 'Projects'}
-        </Link>
-        <Link href={'/contact'}>
-          {currentLanguage === 'ESPAÑOL' ? 'Contacto' : 'Contact'}
-        </Link>
-        {/* <SelectLanguage/> */}
-        {/* <ThemeButton/> */}
-      </div>
+    <div className="flex items-center text-base leading-5">
+      <SelectLanguage />
+      <ThemeButton />
     </div>
   )
 
-  const itemsToRender = () => currentRoute === '/' ? homeItems() : defaultItems()
-
-  return (
-    itemsToRender()
+  const defaultItems = () => (
+    <div className="flex items-center text-base leading-5">
+      <div className="hidden sm:block">
+        {PAGE_ROUTES.map((pageLink) => (
+          <Link href={pageLink.href} className="p-1 font-medium sm:p-4">
+            {currentLanguage === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
+          </Link>
+        ))}
+      </div>
+      <SelectLanguage />
+      <ThemeButton />
+    </div>
   )
+
+  const itemsToRender = () => (currentRoute === '/' ? homeItems() : defaultItems())
+
+  return itemsToRender()
 }
 
 export default NavigationMenu
