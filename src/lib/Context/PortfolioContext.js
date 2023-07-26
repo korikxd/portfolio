@@ -5,31 +5,28 @@ export const PortfolioContext = createContext()
 
 //Export provider
 export const PortfolioProvider = ({ children }) => {
-   const [currentTheme, setCurrentTheme] = useState('light')
-   const [currentLanguage, setCurrentLanguage] = useState('ESPAÑOL')
+  const [currentLanguage, setCurrentLanguage] = useState('ESPAÑOL')
 
-   return (
-      <PortfolioContext.Provider
-         value={{
-            currentLanguage,
-            setCurrentLanguage,
-            currentTheme,
-            setCurrentTheme
-         }}
-      >
-         {children}
-      </PortfolioContext.Provider>
-   )
+  return (
+    <PortfolioContext.Provider
+      value={{
+        currentLanguage,
+        setCurrentLanguage
+      }}
+    >
+      {children}
+    </PortfolioContext.Provider>
+  )
 }
 
 export function usePortfolioContext() {
-   const context = useContext(PortfolioContext)
+  const context = useContext(PortfolioContext)
 
-   if (!context) {
-      console.log('Error deploying app context')
-   }
+  if (!context) {
+    console.error('Error deploying app context')
+  }
 
-   return context
+  return context
 }
 
 export default usePortfolioContext
