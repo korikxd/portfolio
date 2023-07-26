@@ -1,22 +1,9 @@
-import { ArrowUpOutlined } from '@ant-design/icons'
-import { Button } from 'antd'
-
 const GoBackButton = () => {
+  const scrollToTopOfPage = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
 
-  const scrollToTopOfPage = () => (
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
-  )
+  const renderButton = () => <button onClick={scrollToTopOfPage}>SUBIR</button>
 
-  const renderButton = () => (
-    <Button
-      icon={<ArrowUpOutlined/>}
-      onClick={scrollToTopOfPage}
-    />
-  )
-
-  return (
-    renderButton()
-  )
+  return renderButton()
 }
 
 export default GoBackButton
