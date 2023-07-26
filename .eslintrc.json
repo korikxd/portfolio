@@ -47,18 +47,17 @@
         "namedComponents": "function-expression"
       }
     ],
-
-    "complexity": [
-      "error",
-      {
-        "max": 10
-      }
-    ],
     "max-lines": [
       "error",
       {
         "max": 300,
         "skipComments": true
+      }
+    ],
+    "complexity": [
+      "error",
+      {
+        "max": 10
       }
     ],
     "max-depth": ["error", 2],
@@ -92,11 +91,11 @@
           ["@components", "components/*"],
           ["@lib", "./lib"],
           ["@images", "images/*"],
-          ["@core", "core/*"],
-          ["@styles", "core/*"]
+          ["@constants", "constants/*"]
         ],
         "extensions": [
-          ".js", ".jsx"]
+          ".js", ".jsx"
+        ]
       }
 
     }
