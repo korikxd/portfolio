@@ -8,7 +8,7 @@ const ExperienceCard = () => {
   const renderExperiences = () => {
     if (currentLanguage === 'ESPAÑOL') {
       return EXPERIENCES_SPANISH.map((work, index) => (
-        <>
+        <div key={index}>
           <div className="grid-cols-[]">
             <p>{work.date}</p>
           </div>
@@ -16,11 +16,11 @@ const ExperienceCard = () => {
             <a href={work.link}>{work.title}</a>
             <p>{work.description}</p>
           </div>
-        </>
+        </div>
       ))
     }
     return EXPERIENCES_ENGLISH.map((work, index) => (
-      <>
+      <div key={index}>
         <div className="grid-cols-[]">
           <p>{work.date}</p>
         </div>
@@ -28,7 +28,7 @@ const ExperienceCard = () => {
           <a href={work.link}>{work.title}</a>
           <p>{work.description}</p>
         </div>
-      </>
+      </div>
     ))
   }
 
