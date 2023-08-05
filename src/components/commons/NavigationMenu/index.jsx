@@ -21,8 +21,8 @@ const NavigationMenu = () => {
   const defaultItems = () => (
     <div className="flex items-center text-base leading-5">
       <div className="hidden sm:block">
-        {PAGE_ROUTES.map((pageLink) => (
-          <Link href={pageLink.href} className="p-1 font-medium sm:p-4">
+        {PAGE_ROUTES.map((pageLink, index) => (
+          <Link href={pageLink.href} key={index} className="p-1 font-medium sm:p-4">
             {currentLanguage === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
           </Link>
         ))}
