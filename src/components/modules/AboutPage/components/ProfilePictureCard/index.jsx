@@ -1,11 +1,17 @@
-const ProfilePictureCard = () => (
-  <div className="">
-    {/* Avatar Container */}
-    <div className="rounded-[50%] items-center flex justify-center h-16 w-16">
-      {/* Profile Picture */}
-      <img className="h-3/6 w-3/6" src="/profile_picture.png" />
+import { BsStars as StarIcon } from 'react-icons/bs'
+
+const ProfilePictureCard = () => {
+  return (
+    <div className={`grid grid-cols-1`}>
+      <img className={`w-48 h-48 rounded-full justify-self-center`} alt="avatar" src="/profile_picture.png" />
+      <div className={``}>
+        <h3>
+          <StarIcon className={`inline-block`} /> GABRIEL GARCÍA MERCADO
+          <StarIcon className={`inline-block scale-x-[-1]`} />
+        </h3>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default ProfilePictureCard
