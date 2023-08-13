@@ -1,32 +1,51 @@
-import { TagCloud } from 'react-tagcloud'
+import { PiStarFour, PiStarFourFill } from 'react-icons/pi'
+import { LANGUAGES } from './constants'
+
 import usePortfolioContext from '@lib/Context/PortfolioContext'
 
-import { SKILLS_COLLECTION } from './constants'
-
-const ExperienceCard = () => {
+const SkillsCard = () => {
   const { currentLanguage } = usePortfolioContext()
 
-  const renderTags = (tag, size, color) => (
-    <span
-      style={{
-        animationDelay: `${Math.random() * 2}s`,
-        fontSize: `${size / 2}em`,
-        border: `2px solid ${color}`
-      }}
-    >
-      {tag.value}
-    </span>
-  )
+  const renderSkills = () => {
+    return (
+      <>
+        <h3 className={`text-center`}>{currentLanguage === 'ESPAÑOL' ? 'HABILIDADES' : 'SKILLS'}</h3>
+        <div></div>
+      </>
+    )
+  }
+
+  const renderLanguages = () => {
+    return (
+      <>
+        <h3 className={`text-center`}>{currentLanguage === 'ESPAÑOL' ? 'IDIOMAS' : 'LANGUAGES'}</h3>
+        {LANGUAGES.map((language) => (
+          <text key={language.key} className={`flex flex-row gap-4`}>
+            {language.label} {renderStars(language.value)}
+          </text>
+        ))}
+      </>
+    )
+  }
+
+  const renderStars = (value) => {
+    const starsArray = [1, 2, 3, 4, 5]
+
+    return (
+      <div className={``}>
+        {starsArray.map((star) =>
+          value >= star ? <PiStarFourFill className={`inline-block`} /> : <PiStarFour className={`inline-block`} />
+        )}
+      </div>
+    )
+  }
 
   return (
-    <>
-      <h1>{currentLanguage === 'ESPAÑOL' ? 'Habilidades' : 'Skills'}</h1>
-      <div>
-        {/* TODO: WORK IN PROGRESS */}
-        {/* <TagCloud tags={SKILLS_COLLECTION} minSize={1} maxSize={5} renderer={renderTags}/> */}
-      </div>
-    </>
+    <div className={`grid grid-cols-2 grid-flow-col-dense w-1/2 gap-8`}>
+      <div className={``}>{renderSkills()}</div>
+      <div className={``}>{renderLanguages()}</div>
+    </div>
   )
 }
 
-export default ExperienceCard
+export default SkillsCard
