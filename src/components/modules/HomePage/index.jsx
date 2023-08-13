@@ -4,7 +4,7 @@ import SocialButtons from './components/SocialButtons'
 
 const HomePage = () => {
   return (
-    <div className="h-full">
+    <div className={`h-full`}>
       <Banner />
       <NavigationButtons />
       <SocialButtons />
