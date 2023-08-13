@@ -3,14 +3,16 @@ import NavigationMenu from '../NavigationMenu'
 
 const CustomLayout = ({ children }) => {
   return (
-    <div className="flex flex-col h-screen justify-between">
-      <header className="flex items-center justify-end py-8">
+    <div className={`flex flex-col h-screen`}>
+      <header className={`flex items-center justify-end py-8`}>
         <NavigationMenu />
       </header>
-      <main className="flex flex-col grow">{children}</main>
-      <footer className="flex flex-col items-center py-8 font-light dark:text-white lg:py-8">
-        <Footer />
-      </footer>
+      <main className={`flex flex-col grow`}>
+        {children}
+        <footer className={`flex flex-col items-center py-8 font-light dark:text-white`}>
+          <Footer />
+        </footer>
+      </main>
     </div>
   )
 }
