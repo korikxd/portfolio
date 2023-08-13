@@ -51,7 +51,7 @@ const BiographyCard = () => {
   }
 
   return (
-    <div>
+    <div className={`grid grid-cols-1`}>
       {renderBiography()}
       {renderQuoteSection()}
     </div>
