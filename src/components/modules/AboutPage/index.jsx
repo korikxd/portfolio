@@ -4,19 +4,11 @@ import ProfilePictureCard from './components/ProfilePictureCard'
 import SkillsCard from './components/SkillsCard'
 
 const AboutPage = () => (
-  <div className="flex flex-col justify-center">
-    <div className="">
-      <ProfilePictureCard />
-    </div>
-    <div className="">
-      <BiographyCard />
-    </div>
-    <div className="">
-      <SkillsCard />
-    </div>
-    <div className="">
-      <ExperienceCard />
-    </div>
+  <div className={`flex flex-col items-center gap-16`}>
+    <ProfilePictureCard />
+    <BiographyCard />
+    <SkillsCard />
+    <ExperienceCard />
   </div>
 )
 
