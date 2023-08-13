@@ -9,7 +9,7 @@ const NavigationButtons = () => {
   const filteredRoutes = PAGE_ROUTES.filter((pageLink, index) => index !== 0)
 
   return (
-    <div className="h-1/3 flex justify-center items-center">
+    <div className={`h-1/3 flex justify-center items-center`}>
       {filteredRoutes.map((pageLink, index) => (
         <button
           key={index}
