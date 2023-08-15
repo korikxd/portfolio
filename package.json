@@ -11,11 +11,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.0.1",
-    "antd": "^5.7.0",
     "autoprefixer": "10.4.14",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-import": "^1.13.6",
     "eslint": "8.44.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-next": "13.4.9",
