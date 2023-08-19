@@ -1,5 +1,5 @@
 const Footer = () => (
-  <p className="text-center">
+  <p className={`text-center`}>
     Designed and developed by Gabriel García.
     <br />
     Build with <span className="text-[#fe5000] font-bold">Next.js</span> &{' '}
