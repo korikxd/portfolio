@@ -26,7 +26,32 @@ export const SKILLS_COLLECTION = [
   'Nestjs'
 ]
 
-export const LANGUAGES = [
-  { key: 'spanish', label: 'Spanish', value: 5 },
-  { key: 'english', label: 'English', value: 4 }
-]
+//SPANISH TEXTS
+
+export const SKILLS_SPANISH = {
+  title: 'HABILIDADES',
+  skillsList: SKILLS_COLLECTION
+}
+
+export const LANGUAGES_SPANISH = {
+  title: 'IDIOMAS',
+  languagesList: [
+    { key: 'spanish', label: 'Español', value: 5 },
+    { key: 'english', label: 'Inglés', value: 4 }
+  ]
+}
+
+//ENGLISH TEXTS
+
+export const SKILLS_ENGLISH = {
+  title: 'SKILLS',
+  skillsList: SKILLS_COLLECTION
+}
+
+export const LANGUAGES_ENGLISH = {
+  title: 'LANGUAGES',
+  languagesList: [
+    { key: 'spanish', label: 'Spanish', value: 5 },
+    { key: 'english', label: 'English', value: 4 }
+  ]
+}
