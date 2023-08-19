@@ -1,15 +1,10 @@
 import { PiStarFour, PiStarFourFill } from 'react-icons/pi'
-import { LANGUAGES } from './constants'
 
-import usePortfolioContext from '@lib/Context/PortfolioContext'
-
-const SkillsCard = () => {
-  const { currentLanguage } = usePortfolioContext()
-
+const SkillsCard = ({ skills, languages }) => {
   const renderSkills = () => {
     return (
       <>
-        <h3 className={`text-center`}>{currentLanguage === 'ESPAÑOL' ? 'HABILIDADES' : 'SKILLS'}</h3>
+        <h3 className={`text-center`}>{skills.title}</h3>
         <div></div>
       </>
     )
@@ -18,11 +13,11 @@ const SkillsCard = () => {
   const renderLanguages = () => {
     return (
       <>
-        <h3 className={`text-center`}>{currentLanguage === 'ESPAÑOL' ? 'IDIOMAS' : 'LANGUAGES'}</h3>
-        {LANGUAGES.map((language) => (
-          <text key={language.key} className={`flex flex-row gap-4`}>
+        <h3 className={`text-center`}>{languages.title}</h3>
+        {languages.languagesList.map((language) => (
+          <span key={language.key} className={`flex flex-row gap-4`}>
             {language.label} {renderStars(language.value)}
-          </text>
+          </span>
         ))}
       </>
     )
@@ -33,8 +28,12 @@ const SkillsCard = () => {
 
     return (
       <div className={``}>
-        {starsArray.map((star) =>
-          value >= star ? <PiStarFourFill className={`inline-block`} /> : <PiStarFour className={`inline-block`} />
+        {starsArray.map((star, index) =>
+          value >= star ? (
+            <PiStarFourFill className={`inline-block`} key={index} />
+          ) : (
+            <PiStarFour className={`inline-block`} key={index} />
+          )
         )}
       </div>
     )
