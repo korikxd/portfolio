@@ -7,13 +7,16 @@ import ThemeButton from './components/ThemeButton'
 import { PAGE_ROUTES } from 'constants/routes'
 
 const NavigationMenu = () => {
-  const { currentLanguage } = usePortfolioContext()
+  const {
+    portfolioContent: { language },
+    setLanguage
+  } = usePortfolioContext()
   const router = useRouter()
   const currentRoute = router.pathname
 
   const homeItems = () => (
     <div className={`flex items-center text-base leading-5`}>
-      <SelectLanguage />
+      <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
       <ThemeButton />
     </div>
   )
@@ -23,11 +26,11 @@ const NavigationMenu = () => {
       <div className={`hidden sm:block`}>
         {PAGE_ROUTES.map((pageLink, index) => (
           <Link href={pageLink.href} key={index} className={`p-1 font-medium sm:p-4`}>
-            {currentLanguage === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
+            {language === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
           </Link>
         ))}
       </div>
-      <SelectLanguage />
+      <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
       <ThemeButton />
     </div>
   )
