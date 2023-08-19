@@ -1,10 +1,6 @@
-import { usePortfolioContext } from '@lib/Context/PortfolioContext'
-
 import { LANGUAGES } from './constants'
 
-const SelectLanguage = () => {
-  const { currentLanguage, setCurrentLanguage } = usePortfolioContext()
-
+const SelectLanguage = ({ currentLanguage, setCurrentLanguage }) => {
   const handleLanguageSelection = (language) => setCurrentLanguage(language)
 
   return (

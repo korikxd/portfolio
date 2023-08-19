@@ -1,21 +1,83 @@
-import { PORTFOLIO_DEFAULT_VALUES } from 'constants/portfolioContent'
 import { createContext, useContext, useState } from 'react'
+import { PORTFOLIO_DEFAULT_VALUES } from 'constants/portfolioContent'
+import PropTypes from 'prop-types'
 
 //Create context object
 export const PortfolioContext = createContext()
 
 //Export provider
 export const PortfolioProvider = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState('ESPAÑOL')
   const [portfolioContent, setPortfolioContent] = useState(PORTFOLIO_DEFAULT_VALUES)
+
+  const setLanguage = (value) => {
+    setPortfolioContent({
+      ...portfolioContent,
+      language: value
+    })
+  }
+
+  const setHomeContent = (value) => {
+    setPortfolioContent({
+      ...portfolioContent,
+      content: {
+        ...portfolioContent.content,
+        homePageText: {
+          ...portfolioContent.content.homePageText,
+          ...value
+        }
+      }
+    })
+  }
+
+  const setAboutContent = (value) => {
+    setPortfolioContent({
+      ...portfolioContent,
+      content: {
+        ...portfolioContent.content,
+        aboutPageText: {
+          ...portfolioContent.content.aboutPageText,
+          ...value
+        }
+      }
+    })
+  }
+
+  const setProjectsContent = (value) => {
+    setPortfolioContent({
+      ...portfolioContent,
+      content: {
+        ...portfolioContent.content,
+        projectsPageText: {
+          ...portfolioContent.content.projectsPageText,
+          ...value
+        }
+      }
+    })
+  }
+
+  const setContactContent = (value) => {
+    setPortfolioContent({
+      ...portfolioContent,
+      content: {
+        ...portfolioContent.content,
+        contactPageText: {
+          ...portfolioContent.content.contactPageText,
+          ...value
+        }
+      }
+    })
+  }
 
   return (
     <PortfolioContext.Provider
       value={{
-        currentLanguage,
-        setCurrentLanguage,
         portfolioContent,
-        setPortfolioContent
+        setPortfolioContent,
+        setLanguage,
+        setHomeContent,
+        setAboutContent,
+        setProjectsContent,
+        setContactContent
       }}
     >
       {children}
@@ -34,3 +96,7 @@ export function usePortfolioContext() {
 }
 
 export default usePortfolioContext
+
+PortfolioProvider.propTypes = {
+  children: PropTypes.any
+}

@@ -1,9 +1,9 @@
 import { BsStars as StarIcon } from 'react-icons/bs'
 
-const ProfilePictureCard = () => {
+const ProfilePictureCard = ({ profilePictureRoute }) => {
   return (
     <div className={`grid grid-cols-1`}>
-      <img className={`w-48 h-48 rounded-full justify-self-center`} alt="avatar" src="/profile_picture.png" />
+      <img className={`w-48 h-48 rounded-full justify-self-center`} alt="avatar" src={profilePictureRoute} />
       <div className={``}>
         <h3>
           <StarIcon className={`inline-block`} /> GABRIEL GARCÍA MERCADO
