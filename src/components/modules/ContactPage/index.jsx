@@ -1,6 +1,6 @@
 import ContactButton from './components/ContactButton'
 import { useEffect } from 'react'
-import { CONTACT_ENGLISH_TEXTS, CONTACT_SPANISH_TEXTS } from './constants'
+import { CONTACT_ENGLISH_TEXTS, CONTACT_SPANISH_TEXTS, CV_ENGLISH, CV_SPANISH } from './constants'
 
 const ContactPage = ({ contactData, setContactData, language }) => {
   useEffect(() => {
@@ -19,14 +19,24 @@ const ContactPage = ({ contactData, setContactData, language }) => {
     }
   }, [language])
 
+  const renderResumeButton = () => (
+    <ContactButton
+      key={language === 'ESPAÑOL' ? CV_SPANISH.key : CV_ENGLISH.key}
+      href={language === 'ESPAÑOL' ? CV_SPANISH.href : CV_ENGLISH.href}
+      text={language === 'ESPAÑOL' ? CV_SPANISH.label : CV_ENGLISH.label}
+      icon={CV_SPANISH.icon}
+    />
+  )
+
   return (
     <div className={`text-center h-full`}>
-      <h1>{contactData.mainTitle}</h1>
-      <p>{contactData.paragraph}</p>
-      <div className={`flex justify-center items-center`}>
+      <h1 className={`text-primaryOrange`}>{contactData.mainTitle}</h1>
+      <p className={`my-8`}>{contactData.paragraph}</p>
+      <div className={`flex justify-center items-center gap-6`}>
         {contactData.contactButtons.map((button) => (
           <ContactButton key={button.key} href={button.href} text={button.label} icon={button.icon} />
         ))}
+        {renderResumeButton()}
       </div>
     </div>
   )
