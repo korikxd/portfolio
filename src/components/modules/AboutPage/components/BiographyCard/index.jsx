@@ -3,16 +3,21 @@ const BiographyCard = ({ biographyTexts, currentLanguage }) => {
 
   const renderBiography = () => (
     <>
-      <p>{firstParagraph}</p>
+      <p>
+        {firstParagraph?.firstSentence}
+        <b>{firstParagraph?.name}</b>
+        {firstParagraph?.secondSentence}
+        <b>{firstParagraph?.role}</b>
+        {firstParagraph?.thirdSentence}
+      </p>
       <p>{secondParagraph}</p>
       <p>{thirdParagraph}</p>
     </>
   )
 
   const renderQuoteSection = () => (
-    <blockquote>
-      {memeQuote}
-      <cite>~ Sun Tzu {currentLanguage === 'ESPAÑOL' ? '(Probablemente)' : '(Probably)'}</cite>
+    <blockquote className={`p-4 my-4 border-l-4`}>
+      <p className={`text-2xl italic font-medium`}>{memeQuote}</p>
     </blockquote>
   )
 
