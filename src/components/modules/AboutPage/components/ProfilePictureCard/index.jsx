@@ -5,10 +5,10 @@ const ProfilePictureCard = ({ profilePictureRoute }) => {
     <div className={`grid grid-cols-1`}>
       <img className={`w-48 h-48 rounded-full justify-self-center`} alt="avatar" src={profilePictureRoute} />
       <div className={``}>
-        <h3>
+        <h2 className={``}>
           <StarIcon className={`inline-block`} /> GABRIEL GARCÍA MERCADO
           <StarIcon className={`inline-block scale-x-[-1]`} />
-        </h3>
+        </h2>
       </div>
     </div>
   )
