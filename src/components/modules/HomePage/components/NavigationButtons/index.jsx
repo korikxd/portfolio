@@ -5,16 +5,15 @@ const NavigationButtons = ({ buttons }) => {
   const filteredRoutes = buttons.filter((pageLink, index) => index !== 0)
 
   return (
-    <div className={`h-1/3 flex justify-center items-center`}>
+    <div className={`h-1/3 flex justify-center items-center gap-8`}>
       {filteredRoutes.map((pageLink, index) => (
         <Link href={pageLink.href} key={index}>
-          <button
-            className={`mx-8 p-[1.3em_3em] text-xs uppercase tracking-[2.5px] font-medium text-[#000] bg-[#fff] rounded-[45px] shadow-[0_8px_15px_rgba(0,0,0,0.1)] transition-all cursor-pointer outline-none
-            hover:translate-y-[-7px]
-            active:translate-y-[-1px]
-          `}
-          >
-            {pageLink.label}
+          <button type="button" className={`group relative h-14 w-64 overflow-hidden rounded-lg shadow `}>
+            <div
+              className={`absolute inset-0 w-3 bg-primaryOrange transition-all duration-[500ms] ease-out group-hover:w-full group-hover:opacity-25`}
+            ></div>
+            <span className={`text-lg font-bold`}>{pageLink.label}</span>
+            <span className={`hidden group-hover:block`}>{pageLink.description}</span>
           </button>
         </Link>
       ))}

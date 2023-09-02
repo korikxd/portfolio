@@ -1,13 +1,17 @@
 import { SiYoutube, SiGithub, SiLinkedin } from 'react-icons/si'
 import { AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
-import { HiDocumentText } from 'react-icons/hi'
 
 export const HOME_PAGE_TEXTS = {
   navigationButtons: [],
   socials: [
-    { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub /> },
-    { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube /> },
-    { name: 'Linkedin', link: 'https://www.linkedin.com/in/gabriel-garc%C3%ADa-mercado/', icon: <SiLinkedin /> }
+    { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub />, color: '#6b7280' },
+    { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube />, color: '#ef4444' },
+    {
+      name: 'Linkedin',
+      link: 'https://www.linkedin.com/in/gabriel-garc%C3%ADa-mercado/',
+      icon: <SiLinkedin />,
+      color: '#3b82f6'
+    }
   ]
 }
 
@@ -43,8 +47,7 @@ export const CONTACT_PAGE_TEXTS = {
       icon: <AiFillLinkedin />,
       href: 'https://www.linkedin.com/in/gabriel-garc%C3%ADa-mercado/'
     },
-    { key: 'email', label: 'Email', icon: <AiOutlineMail />, href: 'mailto:gabriel.garmer01@gmail.com' },
-    { key: 'resume', label: 'Resume', icon: <HiDocumentText />, href: '' }
+    { key: 'email', label: 'Email', icon: <AiOutlineMail />, href: 'mailto:gabriel.garmer01@gmail.com' }
   ]
 }
 
