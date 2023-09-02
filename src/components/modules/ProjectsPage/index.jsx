@@ -30,6 +30,7 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
           projectLink={project.link}
           projectTags={project.tags}
           projectStatus={project.status}
+          language={language}
         />
       ))}
     </div>
