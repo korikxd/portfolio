@@ -5,10 +5,11 @@ export const HOME_PAGE_TEXTS = {
   navigationButtons: [],
   socials: [
     { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub />, color: '#6b7280' },
-    { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube />, color: '#ef4444' },
+    //TODO --> Configurate youtube channel
+    //  { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube />, color: '#ef4444' },
     {
       name: 'Linkedin',
-      link: 'https://www.linkedin.com/in/gabriel-garc%C3%ADa-mercado/',
+      link: 'https://www.linkedin.com/in/gabgarmer/',
       icon: <SiLinkedin />,
       color: '#3b82f6'
     }
@@ -45,7 +46,7 @@ export const CONTACT_PAGE_TEXTS = {
       key: 'linkedin',
       label: 'Linkedin',
       icon: <AiFillLinkedin />,
-      href: 'https://www.linkedin.com/in/gabriel-garc%C3%ADa-mercado/'
+      href: 'https://www.linkedin.com/in/gabgarmer'
     },
     { key: 'email', label: 'Email', icon: <AiOutlineMail />, href: 'mailto:gabriel.garmer01@gmail.com' }
   ]
@@ -53,6 +54,7 @@ export const CONTACT_PAGE_TEXTS = {
 
 export const PORTFOLIO_DEFAULT_VALUES = {
   language: 'ESPAÑOL',
+  mobileMenu: false,
   content: {
     homePageText: HOME_PAGE_TEXTS,
     aboutPageText: ABOUT_PAGE_TEXTS,
