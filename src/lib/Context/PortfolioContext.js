@@ -9,6 +9,13 @@ export const PortfolioContext = createContext()
 export const PortfolioProvider = ({ children }) => {
   const [portfolioContent, setPortfolioContent] = useState(PORTFOLIO_DEFAULT_VALUES)
 
+  const setMobileMenu = (value) => {
+    setPortfolioContent({
+      ...portfolioContent,
+      mobileMenu: value
+    })
+  }
+
   const setLanguage = (value) => {
     setPortfolioContent({
       ...portfolioContent,
@@ -73,6 +80,7 @@ export const PortfolioProvider = ({ children }) => {
       value={{
         portfolioContent,
         setPortfolioContent,
+        setMobileMenu,
         setLanguage,
         setHomeContent,
         setAboutContent,
