@@ -28,7 +28,9 @@ const ProjectCard = ({
         className={`relative overflow-hidden h-56 rounded-t-lg`}
         style={{
           backgroundImage: `url(/${projectImage})`,
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
         }}
       >
         <div className={`left-0 top-0 h-16 w-16`}>
@@ -52,7 +54,7 @@ const ProjectCard = ({
         <p className={`mb-3`}>{showMore ? projectDescription : `${projectDescription.substring(0, 250)}...`}</p>
         {renderButton()}
         {/* <-- Project Stack --> */}
-        <p>
+        <div className={`flex flex-wrap max-w-full overflow-hidden`}>
           {projectTags.map((tag, index) => (
             <span
               key={index}
@@ -62,7 +64,7 @@ const ProjectCard = ({
               {tag.name}
             </span>
           ))}
-        </p>
+        </div>
       </div>
     </div>
   )
