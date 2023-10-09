@@ -2,9 +2,9 @@ const Footer = () => (
   <p className={`text-center`}>
     Designed and developed by Gabriel García Mercado.
     <br />
-    Build with <span className="text-[#fe5000] font-bold">Next.js</span> &{' '}
-    <span className="text-[#fe5000] font-bold">Tailwind CSS</span>. Hosted on{' '}
-    <span className="text-[#fe5000] font-bold">Vercel</span>.
+    Built with <span className="text-[#87CEEB] font-bold">Next.js</span> &{' '}
+    <span className="text-[#87CEEB] font-bold">Tailwind CSS</span>. Hosted on{' '}
+    <span className="text-[#87CEEB] font-bold">Vercel</span>.
   </p>
 )
 
