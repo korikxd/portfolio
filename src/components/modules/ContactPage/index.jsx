@@ -30,7 +30,8 @@ const ContactPage = ({ contactData, setContactData, language }) => {
 
   return (
     <div className={`text-center h-full`}>
-      <h1 className={`text-primaryOrange`}>{contactData.mainTitle}</h1>
+      {/* TODO --> Fix text color */}
+      <h1 className={`text-`}>{contactData.mainTitle}</h1>
       <p className={`my-8`}>{contactData.paragraph}</p>
       <div className={`flex justify-center items-center gap-6`}>
         {contactData.contactButtons.map((button) => (
