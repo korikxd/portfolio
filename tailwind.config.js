@@ -7,8 +7,19 @@ module.exports = {
   content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
-      primaryOrange: '#fe5000',
+      firstAccent: '#F437FB',
+      secondAccent: '#C8A8E9',
+      highlight: '#C3C7F3',
+      dark: {
+        background: '#1E1E1E',
+        text: '#FFDAB9'
+      },
+      light: {
+        background: '#F3DCDC',
+        text: '#333333'
+      },
 
+      //OLD COLORS
       black: '#000',
       gray: '#6b7280',
       red: '#ef4444',
@@ -17,7 +28,6 @@ module.exports = {
       orange: '#db8009',
       lightBlue: '#1196d4',
       purple: '#5908d1',
-
       //Light Theme Colors
       lightBackground: '#f6f6f6',
       lightFontColor: '#5a4669',
@@ -27,7 +37,8 @@ module.exports = {
       darkFontColor: '#8f9ba8'
     },
     fontFamily: {
-      cabin: ['Cabin']
+      roboto: ['Roboto Slab'],
+      pacifico: ['Pacifico']
     },
     extend: {
       animation: {
@@ -52,9 +63,6 @@ module.exports = {
         blink: {
           '50%': {
             borderColor: 'transparent'
-          },
-          '100%': {
-            borderColor: 'white'
           }
         }
       }
