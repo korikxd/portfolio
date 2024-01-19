@@ -33,7 +33,7 @@ link your Github account with your Vercel account.
 
 ## 📌 Folders Overview
 
-- `pages`=> Every file inside of it would be route but the `_app.js` file.
+- `pages`=> Every file inside of it would be a route but the `_app.js` file.
 - `lib` => Contains utilities such as the context of the application.
 - `constants` => Saves all the values that won't change in the project.
 - `components` => Composed of two subfolders: `commons` that has every reusable component and `modules` folder that

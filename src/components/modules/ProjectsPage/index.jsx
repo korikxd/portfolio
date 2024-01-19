@@ -20,7 +20,7 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
   }, [language])
 
   const renderAllProjects = () => (
-    <div className={`grid grid-cols-3 gap-16`}>
+    <div className={`grid grid-cols-3 gap-16 mt-4`}>
       {projectsData.projectsList.map((project, index) => (
         <ProjectCard
           key={index}
@@ -37,8 +37,8 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
   )
 
   return (
-    <div className={`p-24`}>
-      <h1>{projectsData.pageTitle}</h1>
+    <div className={`p-24 h-full`}>
+      <h1 className={`text-center text-firstAccent`}>{projectsData.pageTitle}</h1>
       {renderAllProjects()}
     </div>
   )

@@ -9,7 +9,7 @@ const CustomLayout = ({ children }) => {
       </header>
       <main className={`flex flex-col grow`}>
         {children}
-        <footer className={`flex flex-col items-center py-8 font-light dark:text-white`}>
+        <footer className={`flex flex-col items-center py-8 font-light`}>
           <Footer />
         </footer>
       </main>

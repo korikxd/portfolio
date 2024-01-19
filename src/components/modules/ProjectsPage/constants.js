@@ -29,7 +29,7 @@ export const PROJECTS_SPANISH = {
   pageTitle: 'PROYECTOS',
   projectsList: [
     {
-      image: 'profile_picture.png',
+      image: 'prendas_logo.png',
       name: 'Prendas',
       description: `Plataforma web encargada de gestionar el proceso de prendado de un vehículo en Chile.
       Simplifica las tareas administrativas que deben de realizar los ejecutivos durante todo el proceso, las cuales consisten en subir la documentación correspondiente y
@@ -45,7 +45,7 @@ export const PROJECTS_SPANISH = {
       status: SPANISH_RIBBONS[2]
     },
     {
-      image: 'profile_picture.png',
+      image: 'transferb2b_logo.png',
       name: 'Transfer B2B',
       description: `Plataforma web encargada de simplificar el proceso de transferencia de vehículos. Ya sea para comprar, vender o regalar (transferir) un vehículo. Los usuarios pueden introducir los datos del vehículo, cargar los documentos necesarios e iniciar el proceso de transferencia dentro de la aplicación.
          La aplicación ofrece una guía paso a paso que garantiza el cumplimiento de todos los requisitos legales y administrativos.
@@ -77,7 +77,7 @@ export const PROJECTS_ENGLISH = {
   pageTitle: 'PROJECTS',
   projectsList: [
     {
-      image: 'profile_picture.png',
+      image: 'prendas_logo.png',
       name: 'Prendas',
       description: `Web platform designed to streamline the process of vehicle pledging in Chile.
       Simplifying the administrative tasks involved in the process, such as uploading neccessary documentation and track the status of the vehicle pledge`,
@@ -92,9 +92,9 @@ export const PROJECTS_ENGLISH = {
       status: ENGLISH_RIBBONS[2]
     },
     {
-      image: 'profile_picture.png',
+      image: 'transferb2b_logo.png',
       name: 'Transfer B2B',
-      description: `Web platform designed to simplify the process of vehicle transfer. Wether you're buying, selling or gifting (transfering) a vehicle.
+      description: `Web platform designed to simplify the process of vehicle transfer. Whether you're buying, selling or gifting (transfering) a vehicle.
       Users can surely input vehicle details, upload required documents and initiate the transfer process within the app.
       The app provides a step-by-step guidance, ensuring all legal and administrative requirements are met.`,
       link: 'https://transfer.i-car.cl/',
