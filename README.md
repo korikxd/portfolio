@@ -1,4 +1,4 @@
-## https://korikxd.github.io/portfolio/
+## [Portfolio](https://gabgarmer.vercel.app/)
 
 Welcome to my portfolio website! built with [Nextjs](https://nextjs.org/) and hosted on [Vercel](https://vercel.com).
 Feel free to use it, or any part of it if you find it helpful.
