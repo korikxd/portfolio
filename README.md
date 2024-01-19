@@ -1,8 +1,4 @@
-<!-- ![](https://i.imgur.com/something.png) -->
-
-<!-- Modify name depending on the domain -->
-
-## gabriel.dev
+## https://korikxd.github.io/portfolio/
 
 Welcome to my portfolio website! built with [Nextjs](https://nextjs.org/) and hosted on [Vercel](https://vercel.com).
 Feel free to use it, or any part of it if you find it helpful.
