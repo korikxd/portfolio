@@ -24,6 +24,6 @@ export const ENGLISH_BIOGRAPHY_PARAGRAPHS = {
    imparting best practices and learning new things every day.`,
   thirdParagraph: `In my free time, I like to play some videogames,
    listen to music and spend some time with friends and family.`,
-  memeQuote: `"Don't push to master branch on a Friday"`,
+  memeQuote: `"Don't push to main branch on a Friday"`,
   cite: `- Sun Tzu (Probably)`
 }
