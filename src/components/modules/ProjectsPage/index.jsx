@@ -38,8 +38,7 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
 
   return (
     <div className={`p-24 h-full`}>
-      {/* TODO --> Fix text color */}
-      <h1 className={`text- text-center`}>{projectsData.pageTitle}</h1>
+      <h1 className={`text-center text-firstAccent`}>{projectsData.pageTitle}</h1>
       {renderAllProjects()}
     </div>
   )
