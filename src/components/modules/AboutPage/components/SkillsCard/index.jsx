@@ -6,8 +6,7 @@ const SkillsCard = ({ skills, languages }) => {
     return (
       <>
         <h3 className={`text-center`}>{skills.title}</h3>
-        {/* TODO --> Fix text color */}
-        <div className={`relative m-auto overflow-hidden text-`}>
+        <div className={`relative m-auto overflow-hidden text-firstAccent`}>
           <InfiniteSlider logos={skills.skillsList} />
         </div>
       </>
@@ -20,8 +19,7 @@ const SkillsCard = ({ skills, languages }) => {
         <h3 className={`text-center`}>{languages.title}</h3>
         {languages.languagesList.map((language) => (
           <span key={language.key} className={`grid grid-cols-2`}>
-            {/* TODO --> Fix text color */}
-            <span className={`text- text-center`}>{language.label}</span> {renderStars(language.value)}
+            <span className={`text-center text-firstAccent`}>{language.label}</span> {renderStars(language.value)}
           </span>
         ))}
       </>
@@ -33,10 +31,9 @@ const SkillsCard = ({ skills, languages }) => {
 
     return (
       <div>
-        {/* TODO --> Fix text color */}
         {starsArray.map((star, index) =>
           value >= star ? (
-            <PiStarFourFill className={`inline-block text-`} key={index} />
+            <PiStarFourFill className={`inline-block text-firstAccent`} key={index} />
           ) : (
             <PiStarFourFill className={`inline-block`} key={index} />
           )
