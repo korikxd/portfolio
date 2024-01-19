@@ -94,7 +94,7 @@ export const PROJECTS_ENGLISH = {
     {
       image: 'transferb2b_logo.png',
       name: 'Transfer B2B',
-      description: `Web platform designed to simplify the process of vehicle transfer. Wether you're buying, selling or gifting (transfering) a vehicle.
+      description: `Web platform designed to simplify the process of vehicle transfer. Whether you're buying, selling or gifting (transfering) a vehicle.
       Users can surely input vehicle details, upload required documents and initiate the transfer process within the app.
       The app provides a step-by-step guidance, ensuring all legal and administrative requirements are met.`,
       link: 'https://transfer.i-car.cl/',
