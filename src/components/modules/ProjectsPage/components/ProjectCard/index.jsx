@@ -15,7 +15,9 @@ const ProjectCard = ({
   const renderButton = () => {
     if (language === 'ESPAÑOL') {
       return (
-        <button onClick={() => setShowMore(!showMore)}>{showMore ? 'Ocultar contenido' : 'Mostrar contenido'}</button>
+        <button className={`dark:text-dark-background text-light-background`} onClick={() => setShowMore(!showMore)}>
+          {showMore ? 'Ocultar contenido' : 'Mostrar contenido'}
+        </button>
       )
     }
 
@@ -23,7 +25,7 @@ const ProjectCard = ({
   }
 
   return (
-    <div className={`bg-lightBackground rounded-lg shadow border`}>
+    <div className={`dark:bg-light-background bg-dark-background rounded-lg shadow border`}>
       <div
         className={`relative overflow-hidden h-56 rounded-t-lg`}
         style={{
@@ -36,7 +38,7 @@ const ProjectCard = ({
         <div className={`left-0 top-0 h-16 w-16`}>
           {/* <-- Top left ribbon --> */}
           <div
-            className={`absolute transform -rotate-45 text-center text-[#ffff] font-semibold py-1 left-[-35px] top-[32px] w-[170px]`}
+            className={`absolute transform -rotate-45 text-center font-semibold py-1 left-[-35px] top-[32px] w-[170px]`}
             style={{
               backgroundColor: `${projectStatus.color}`
             }}
@@ -48,17 +50,19 @@ const ProjectCard = ({
       <div className={`p-5`}>
         {/* <-- Project Title --> */}
         <a href={projectLink ? projectLink : null} target="_blank" rel="noopener noreferrer">
-          <h2 className={`mb-2`}>{projectName}</h2>
+          <h2 className={`mb-2 text-firstAccent`}>{projectName}</h2>
         </a>
         {/* <-- Project Description --> */}
-        <p className={`mb-3`}>{showMore ? projectDescription : `${projectDescription.substring(0, 250)}...`}</p>
+        <p className={`mb-3 dark:text-dark-background text-light-background`}>
+          {showMore ? projectDescription : `${projectDescription.substring(0, 250)}...`}
+        </p>
         {renderButton()}
         {/* <-- Project Stack --> */}
         <div className={`flex flex-wrap max-w-full overflow-hidden`}>
           {projectTags.map((tag, index) => (
             <span
               key={index}
-              className={`text-xs text-[#fff] font-medium mr-2 px-2.5 py-0.5 rounded`}
+              className={`text-xs font-medium mr-2 px-2.5 py-0.5 rounded text-white`}
               style={{ background: `${tag.color}` }}
             >
               {tag.name}
