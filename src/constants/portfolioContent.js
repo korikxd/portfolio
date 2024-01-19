@@ -1,12 +1,10 @@
-import { SiYoutube, SiGithub, SiLinkedin } from 'react-icons/si'
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 import { AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
 
 export const HOME_PAGE_TEXTS = {
   navigationButtons: [],
   socials: [
     { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub />, color: '#6b7280' },
-    //TODO --> Configurate youtube channel
-    //  { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube />, color: '#ef4444' },
     {
       name: 'Linkedin',
       link: 'https://www.linkedin.com/in/gabgarmer/',
@@ -17,7 +15,7 @@ export const HOME_PAGE_TEXTS = {
 }
 
 export const ABOUT_PAGE_TEXTS = {
-  profilePicture: '/profile_picture.png',
+  profilePicture: '/profile_picture.jpeg',
   biographyTexts: {},
   skills: {
     title: '',
