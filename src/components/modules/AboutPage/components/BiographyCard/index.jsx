@@ -16,7 +16,7 @@ const BiographyCard = ({ biographyTexts, currentLanguage }) => {
   )
 
   const renderQuoteSection = () => (
-    <blockquote className={`p-4 my-4 border-l-4`}>
+    <blockquote className={`p-4 my-4 border-l-4 border-l-firstAccent`}>
       <p className={`text-2xl italic font-medium`}>{memeQuote}</p>
       <cite>{cite}</cite>
     </blockquote>
