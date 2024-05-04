@@ -14,12 +14,12 @@ export const CV_SPANISH = {
   key: 'cv',
   label: 'Curriculum',
   icon: <HiDocumentText />,
-  href: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view?usp=sharing'
+  href: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view'
 }
 
 export const CV_ENGLISH = {
   key: 'resume',
   label: 'Resume',
   icon: <HiDocumentText />,
-  href: 'https://drive.google.com/file/d/1xgaHB9gUDWfdHzpeer_jIuiCeyiFzQXY/view?usp=sharing'
+  href: 'https://drive.google.com/file/d/1xgaHB9gUDWfdHzpeer_jIuiCeyiFzQXY/view'
 }
