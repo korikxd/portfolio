@@ -1,7 +1,19 @@
 import AboutPage from '@components/modules/AboutPage'
 import usePortfolioContext from '@lib/Context/PortfolioContext'
+import { API_URL, PORT } from 'constants/environments'
 
-const About = () => {
+export const getServerSideProps = async () => {
+  //const res = await fetch(`${API_URL}:${PORT}/users`)
+  //const userData = await res.json()
+
+  return {
+    props: {
+      //userData
+    }
+  }
+}
+
+const About = ({ userData }) => {
   const {
     portfolioContent: {
       content: { aboutPageText },
@@ -10,15 +22,7 @@ const About = () => {
     setAboutContent
   } = usePortfolioContext()
 
-  return <AboutPage aboutData={aboutPageText} setAboutData={setAboutContent} language={language} />
+  return <AboutPage userData={[]} aboutData={aboutPageText} setAboutData={setAboutContent} language={language} />
 }
 
 export default About
-
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      data: {}
-    }
-  }
-}

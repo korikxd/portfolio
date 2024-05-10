@@ -1,10 +1,14 @@
 import { useEffect } from 'react'
-import ProjectCard from './components/ProjectCard'
-import { PROJECTS_ENGLISH, PROJECTS_SPANISH } from './constants'
 
-const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
+import ModuleBanner from '@components/commons/ModuleBanner'
+
+import { PROJECTS_ENGLISH, PROJECTS_SPANISH } from './constants'
+import { LANGUAGES } from 'constants/languages'
+import ProjectCard from './components/ProjectCard'
+
+const ProjectsPage = ({ projects, projectsData, setProjectsData, language }) => {
   useEffect(() => {
-    if (language !== 'ESPAÑOL') {
+    if (language !== LANGUAGES.spanish) {
       setProjectsData({
         ...projectsData,
         pageTitle: PROJECTS_ENGLISH.pageTitle,
@@ -20,7 +24,7 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
   }, [language])
 
   const renderAllProjects = () => (
-    <div className={`grid grid-cols-3 gap-16 mt-4`}>
+    <div className={`grid grid-cols-3 gap-16 mt-4 p-16`}>
       {projectsData.projectsList.map((project, index) => (
         <ProjectCard
           key={index}
@@ -37,8 +41,8 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
   )
 
   return (
-    <div className={`p-24 h-full`}>
-      <h1 className={`text-center text-firstAccent`}>{projectsData.pageTitle}</h1>
+    <div className={`flex flex-col items-center gap-16`}>
+      <ModuleBanner text={'Projects'} background={'red'} />
       {renderAllProjects()}
     </div>
   )

@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import Banner from './components/Banner'
-import NavigationButtons from './components/NavigationButtons'
+//import NavigationButtons from './components/NavigationButtons'
 import SocialButtons from './components/SocialButtons'
 import { ENGLISH_TEXTS, SPANISH_TEXTS } from './components/NavigationButtons/constants'
+import { LANGUAGES } from 'constants/languages'
 
 const HomePage = ({ homeData, setHomeData, language }) => {
   useEffect(() => {
-    if (language !== 'ESPAÑOL') {
+    if (language !== LANGUAGES.spanish) {
       setHomeData({ ...homeData, navigationButtons: ENGLISH_TEXTS })
     } else {
       setHomeData({ ...homeData, navigationButtons: SPANISH_TEXTS })
@@ -16,7 +17,7 @@ const HomePage = ({ homeData, setHomeData, language }) => {
   return (
     <div className={`h-full`}>
       <Banner />
-      <NavigationButtons buttons={homeData.navigationButtons} />
+      {/* <NavigationButtons buttons={homeData.navigationButtons} /> */}
       <SocialButtons socials={homeData.socials} />
     </div>
   )

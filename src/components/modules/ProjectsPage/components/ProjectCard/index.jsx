@@ -1,3 +1,4 @@
+import { LANGUAGES } from 'constants/languages'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
@@ -13,7 +14,7 @@ const ProjectCard = ({
   const [showMore, setShowMore] = useState(false)
 
   const renderButton = () => {
-    if (language === 'ESPAÑOL') {
+    if (language === LANGUAGES.spanish) {
       return (
         <button className={`dark:text-dark-background text-light-background`} onClick={() => setShowMore(!showMore)}>
           {showMore ? 'Ocultar contenido' : 'Mostrar contenido'}

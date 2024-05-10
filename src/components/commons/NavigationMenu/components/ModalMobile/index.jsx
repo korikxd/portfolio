@@ -4,6 +4,7 @@ import SelectLanguage from '../SelectLanguage'
 import ThemeButton from '../ThemeButton'
 
 import { PAGE_ROUTES } from 'constants/routes'
+import { LANGUAGES } from 'constants/languages'
 
 const ModalMobile = ({ language, setLanguage, handleMobileMenu }) => {
   return (
@@ -31,7 +32,7 @@ const ModalMobile = ({ language, setLanguage, handleMobileMenu }) => {
                 className={`block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0`}
                 aria-current="page"
               >
-                {language === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
+                {language === LANGUAGES.spanish ? pageLink.spanishText : pageLink.englishText}
               </Link>
             </li>
           ))}

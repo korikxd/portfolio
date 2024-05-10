@@ -1,5 +1,5 @@
 import { SiGithub, SiLinkedin } from 'react-icons/si'
-import { AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
+import { LANGUAGES } from './languages'
 
 export const HOME_PAGE_TEXTS = {
   navigationButtons: [],
@@ -36,27 +36,12 @@ export const PROJECTS_PAGE_TEXTS = {
   projectsList: []
 }
 
-export const CONTACT_PAGE_TEXTS = {
-  mainTitle: '',
-  paragraph: '',
-  contactButtons: [
-    {
-      key: 'linkedin',
-      label: 'Linkedin',
-      icon: <AiFillLinkedin />,
-      href: 'https://www.linkedin.com/in/gabgarmer'
-    },
-    { key: 'email', label: 'Email', icon: <AiOutlineMail />, href: 'mailto:gabriel.garmer01@gmail.com' }
-  ]
-}
-
 export const PORTFOLIO_DEFAULT_VALUES = {
-  language: 'ESPAÑOL',
+  language: LANGUAGES.spanish,
   mobileMenu: false,
   content: {
     homePageText: HOME_PAGE_TEXTS,
     aboutPageText: ABOUT_PAGE_TEXTS,
-    projectsPageText: PROJECTS_PAGE_TEXTS,
-    contactPageText: CONTACT_PAGE_TEXTS
+    projectsPageText: PROJECTS_PAGE_TEXTS
   }
 }

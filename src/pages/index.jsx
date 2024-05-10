@@ -1,7 +1,19 @@
 import HomePage from '@components/modules/HomePage'
 import usePortfolioContext from '@lib/Context/PortfolioContext'
+import { API_URL, PORT } from 'constants/environments'
 
-const Home = () => {
+export const getServerSideProps = async () => {
+  //const resUser = await fetch(`${API_URL}:${PORT}/users`)
+  //const resExperiences = await fetch(`${API_URL}:${PORT}/experiences`)
+  //const userData = resUser.json()
+  //const experiences = resExperiences.json()
+
+  return {
+    props: {}
+  }
+}
+
+const Home = ({ userData, experiences }) => {
   const {
     portfolioContent: {
       content: { homePageText },
@@ -14,11 +26,3 @@ const Home = () => {
 }
 
 export default Home
-
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      data: {}
-    }
-  }
-}
