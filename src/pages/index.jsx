@@ -1,5 +1,5 @@
-import HomePage from '@components/modules/HomePage'
-import usePortfolioContext from '@lib/Context/PortfolioContext'
+import HomePage from '@components/modules/HomePage';
+import usePortfolioContext from '@lib/Context/PortfolioContext';
 
 const Home = () => {
   const {
@@ -8,17 +8,9 @@ const Home = () => {
       language
     },
     setHomeContent
-  } = usePortfolioContext()
+  } = usePortfolioContext();
 
-  return <HomePage homeData={homePageText} setHomeData={setHomeContent} language={language} />
-}
+  return <HomePage homeData={homePageText} setHomeData={setHomeContent} language={language} />;
+};
 
-export default Home
-
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      data: {}
-    }
-  }
-}
+export default Home;
