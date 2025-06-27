@@ -30,13 +30,6 @@ const NavigationMenu = () => {
 
   const handleMobileMenu = () => setMobileMenu(!mobileMenu)
 
-  const renderHomeItems = () => (
-    <>
-      <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
-      <ThemeButton />
-    </>
-  )
-
   const defaultItems = () => (
     <ul
       className={`font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 ${'hidden md:flex'}`}
@@ -92,7 +85,7 @@ const NavigationMenu = () => {
           </>
         )}
         <div className={`md:flex items-center justify-center ${mobileMenu ? 'hidden' : 'block'} `}>
-          {currentRoute === '/' ? renderHomeItems() : defaultItems()}
+          {defaultItems()}
         </div>
       </div>
     </nav>
