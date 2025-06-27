@@ -1,7 +1,15 @@
-import Footer from '../Footer'
-import NavigationMenu from '../NavigationMenu'
+import usePortfolioContext from '@lib/Context/PortfolioContext';
+import Footer from '../Footer';
+import NavigationMenu from '../NavigationMenu';
 
 const CustomLayout = ({ children }) => {
+
+  const {
+    portfolioContent: {
+      content: { homePageText },
+    }
+  } = usePortfolioContext();
+
   return (
     <div className={`flex flex-col h-screen`}>
       <header className={`flex justify-end py-8`}>
@@ -10,11 +18,11 @@ const CustomLayout = ({ children }) => {
       <main className={`flex flex-col grow`}>
         {children}
         <footer className={`flex flex-col items-center py-8 font-light`}>
-          <Footer />
+          <Footer socials={homePageText.socials} />
         </footer>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default CustomLayout
+export default CustomLayout;
