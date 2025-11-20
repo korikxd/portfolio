@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import SectionBanner from '@components/commons/SectionBanner'
 import ProjectCard from './components/ProjectCard'
 import { PROJECTS_ENGLISH, PROJECTS_SPANISH } from './constants'
 
@@ -37,9 +38,11 @@ const ProjectsPage = ({ projectsData, setProjectsData, language }) => {
   )
 
   return (
-    <div className={`p-24 h-full`}>
-      <h1 className={`text-center text-firstAccent`}>{projectsData.pageTitle}</h1>
-      {renderAllProjects()}
+    <div>
+      <SectionBanner title={projectsData.pageTitle} image={''}/>
+      <div className={`p-24 h-full`}>
+        {renderAllProjects()}
+      </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { SiGithub, SiLinkedin, SiInstagram, SiYoutube } from 'react-icons/si'
 import { AiOutlineMail } from 'react-icons/ai'
-import { FaFileAlt } from 'react-icons/fa';
+import { FaFileAlt } from 'react-icons/fa'
 
 export const HOME_PAGE_TEXTS = {
   navigationButtons: [],
@@ -10,15 +10,22 @@ export const HOME_PAGE_TEXTS = {
     { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube />, color: '#6b7280' },
     { name: 'Linkedin', link: 'https://www.linkedin.com/in/gabgarmer/', icon: <SiLinkedin />, color: '#3b82f6' },
     { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub />, color: '#6b7280' },
-    //TODO Ver logica para tener un único social para CV en donde el link sea dinámico según el idioma actual
-   //  { name: 'CV (Spanish)', link: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view', icon: <FaFileAlt />, color: '#6b7280' },
-   //  { name: 'CV (English)', link: 'https://drive.google.com/file/d/1xgaHB9gUDWfdHzpeer_jIuiCeyiFzQXY/view', icon: <FaFileAlt />, color: '#6b7280' }
+    {
+      name: 'CV',
+      link: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view',
+      icon: <FaFileAlt />,
+      color: '#6b7280',
+      dynamicLink: {
+        ESPAÑOL: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view',
+        ENGLISH: 'https://drive.google.com/file/d/1xgaHB9gUDWfdHzpeer_jIuiCeyiFzQXY/view'
+      }
+    }
   ]
 }
 
 export const ABOUT_PAGE_TEXTS = {
+  pageTitle: '',
   profilePicture: '/profile_picture.jpeg',
-  biographyTexts: {},
   skills: {
     title: '',
     skillsList: []

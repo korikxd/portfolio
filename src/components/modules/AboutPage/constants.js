@@ -1,0 +1,2 @@
+export const ABOUT_PAGE_TITLE_SPANISH = 'SOBRE MI'
+export const ABOUT_PAGE_TITLE_ENGLISH = 'ABOUT ME'

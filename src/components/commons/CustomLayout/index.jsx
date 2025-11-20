@@ -7,6 +7,7 @@ const CustomLayout = ({ children }) => {
   const {
     portfolioContent: {
       content: { homePageText },
+      language
     }
   } = usePortfolioContext();
 
@@ -18,7 +19,7 @@ const CustomLayout = ({ children }) => {
       <main className={`flex flex-col grow`}>
         {children}
         <footer className={`flex flex-col items-center py-8 font-light`}>
-          <Footer socials={homePageText.socials} />
+          <Footer socials={homePageText.socials} currentLanguage={language} />
         </footer>
       </main>
     </div>
