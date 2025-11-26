@@ -25,7 +25,7 @@ export const HOME_PAGE_TEXTS = {
 
 export const ABOUT_PAGE_TEXTS = {
   pageTitle: '',
-  profilePicture: '/profile_picture.jpeg',
+  profilePicture: '/profile_picture.png',
   skills: {
     title: '',
     skillsList: []
