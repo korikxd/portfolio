@@ -12,16 +12,12 @@ const TECHNOLOGIES_TAGS = [
 ]
 
 const SPANISH_RIBBONS = [
-  { key: 'planning', label: 'Planeación', color: 'green' },
-  { key: 'development', label: 'En desarrollo', color: 'blue' },
-  { key: 'active', label: 'Activo', color: 'orange' },
+  { key: 'active', label: 'Activo', color: 'green' },
   { key: 'ceased', label: 'Finalizado', color: 'red' }
 ]
 
 const ENGLISH_RIBBONS = [
-  { key: 'planning', label: 'Planning', color: 'green' },
-  { key: 'development', label: 'Development', color: 'blue' },
-  { key: 'active', label: 'Active', color: 'orange' },
+  { key: 'active', label: 'Active', color: 'green' },
   { key: 'ceased', label: 'Ceased', color: 'red' }
 ]
 
@@ -29,20 +25,12 @@ export const PROJECTS_SPANISH = {
   pageTitle: 'PROYECTOS',
   projectsList: [
     {
-      image: 'prendas_logo.png',
-      name: 'Prendas',
-      description: `Plataforma web encargada de gestionar el proceso de prendado de un vehículo en Chile.
-      Simplifica las tareas administrativas que deben de realizar los ejecutivos durante todo el proceso, las cuales consisten en subir la documentación correspondiente y
-      hacer seguimiento al estado de las solicitudes.`,
-      link: 'https://prendas.i-car.cl/',
-      tags: [
-        TECHNOLOGIES_TAGS[2],
-        TECHNOLOGIES_TAGS[4],
-        TECHNOLOGIES_TAGS[5],
-        TECHNOLOGIES_TAGS[7],
-        TECHNOLOGIES_TAGS[9]
-      ],
-      status: SPANISH_RIBBONS[2]
+      image: 'starken_logo.jpg',
+      name: 'StarkenCL',
+      description: `Desarrollo de una plataforma web integral para Starken, líder en logística en Chile, optimizando la gestión de envíos nacionales e internacionales. La solución centraliza el seguimiento en tiempo real de paquetes, la creación de envíos y la consulta de servicios, mejorando la eficiencia operativa y la experiencia del usuario.`,
+      link: 'https://starken.cl/',
+      tags: [TECHNOLOGIES_TAGS[3], TECHNOLOGIES_TAGS[5], TECHNOLOGIES_TAGS[7], TECHNOLOGIES_TAGS[8]],
+      status: SPANISH_RIBBONS[0]
     },
     {
       image: 'transferb2b_logo.png',
@@ -58,7 +46,23 @@ export const PROJECTS_SPANISH = {
         TECHNOLOGIES_TAGS[6],
         TECHNOLOGIES_TAGS[7]
       ],
-      status: SPANISH_RIBBONS[2]
+      status: SPANISH_RIBBONS[1]
+    },
+    {
+      image: 'prendas_logo.png',
+      name: 'Prendas',
+      description: `Plataforma web encargada de gestionar el proceso de prendado de un vehículo en Chile.
+      Simplifica las tareas administrativas que deben de realizar los ejecutivos durante todo el proceso, las cuales consisten en subir la documentación correspondiente y
+      hacer seguimiento al estado de las solicitudes.`,
+      link: 'https://prendas.i-car.cl/',
+      tags: [
+        TECHNOLOGIES_TAGS[2],
+        TECHNOLOGIES_TAGS[4],
+        TECHNOLOGIES_TAGS[5],
+        TECHNOLOGIES_TAGS[7],
+        TECHNOLOGIES_TAGS[9]
+      ],
+      status: SPANISH_RIBBONS[1]
     },
     {
       image: 'haip_logo.png',
@@ -68,7 +72,7 @@ export const PROJECTS_SPANISH = {
       y realizar un seguimiento del rendimiento de la campaña, todo dentro de la aplicación.`,
       link: '',
       tags: [TECHNOLOGIES_TAGS[0], TECHNOLOGIES_TAGS[1], TECHNOLOGIES_TAGS[8]],
-      status: SPANISH_RIBBONS[3]
+      status: SPANISH_RIBBONS[1]
     }
   ]
 }
@@ -77,19 +81,12 @@ export const PROJECTS_ENGLISH = {
   pageTitle: 'PROJECTS',
   projectsList: [
     {
-      image: 'prendas_logo.png',
-      name: 'Prendas',
-      description: `Web platform designed to streamline the process of vehicle pledging in Chile.
-      Simplifying the administrative tasks involved in the process, such as uploading neccessary documentation and track the status of the vehicle pledge`,
-      link: 'https://prendas.i-car.cl/',
-      tags: [
-        TECHNOLOGIES_TAGS[2],
-        TECHNOLOGIES_TAGS[4],
-        TECHNOLOGIES_TAGS[5],
-        TECHNOLOGIES_TAGS[7],
-        TECHNOLOGIES_TAGS[9]
-      ],
-      status: ENGLISH_RIBBONS[2]
+      image: 'starken_logo.jpg',
+      name: 'StarkenCL',
+      description: `Development of a comprehensive web platform for Starken, a logistics leader in Chile, optimizing the management of national and international shipments. The solution centralizes real-time package tracking, shipment creation, and service inquiries, improving operational efficiency and user experience.`,
+      link: 'https://starken.cl/',
+      tags: [TECHNOLOGIES_TAGS[3], TECHNOLOGIES_TAGS[5], TECHNOLOGIES_TAGS[7], TECHNOLOGIES_TAGS[8]],
+      status: ENGLISH_RIBBONS[0]
     },
     {
       image: 'transferb2b_logo.png',
@@ -105,7 +102,22 @@ export const PROJECTS_ENGLISH = {
         TECHNOLOGIES_TAGS[6],
         TECHNOLOGIES_TAGS[7]
       ],
-      status: ENGLISH_RIBBONS[2]
+      status: ENGLISH_RIBBONS[1]
+    },
+    {
+      image: 'prendas_logo.png',
+      name: 'Prendas',
+      description: `Web platform designed to streamline the process of vehicle pledging in Chile.
+      Simplifying the administrative tasks involved in the process, such as uploading neccessary documentation and track the status of the vehicle pledge`,
+      link: 'https://prendas.i-car.cl/',
+      tags: [
+        TECHNOLOGIES_TAGS[2],
+        TECHNOLOGIES_TAGS[4],
+        TECHNOLOGIES_TAGS[5],
+        TECHNOLOGIES_TAGS[7],
+        TECHNOLOGIES_TAGS[9]
+      ],
+      status: ENGLISH_RIBBONS[1]
     },
     {
       image: 'haip_logo.png',
@@ -115,7 +127,7 @@ export const PROJECTS_ENGLISH = {
       and track campaign performance all within the app.`,
       link: '',
       tags: [TECHNOLOGIES_TAGS[0], TECHNOLOGIES_TAGS[1], TECHNOLOGIES_TAGS[8]],
-      status: ENGLISH_RIBBONS[3]
+      status: ENGLISH_RIBBONS[1]
     }
   ]
 }

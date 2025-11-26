@@ -1,22 +1,31 @@
-import { SiGithub, SiLinkedin } from 'react-icons/si'
-import { AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
+import { SiGithub, SiLinkedin, SiInstagram, SiYoutube } from 'react-icons/si'
+import { AiOutlineMail } from 'react-icons/ai'
+import { FaFileAlt } from 'react-icons/fa'
 
 export const HOME_PAGE_TEXTS = {
   navigationButtons: [],
   socials: [
+    { name: 'Email', link: 'mailto:gabriel.garmer01@gmail.com', icon: <AiOutlineMail />, color: '#6b7280' },
+    { name: 'Instagram', link: 'https://instagram.com/korikxd', icon: <SiInstagram />, color: '#6b7280' },
+    { name: 'Youtube', link: 'https://www.youtube.com/@korikxd', icon: <SiYoutube />, color: '#6b7280' },
+    { name: 'Linkedin', link: 'https://www.linkedin.com/in/gabgarmer/', icon: <SiLinkedin />, color: '#3b82f6' },
     { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub />, color: '#6b7280' },
     {
-      name: 'Linkedin',
-      link: 'https://www.linkedin.com/in/gabgarmer/',
-      icon: <SiLinkedin />,
-      color: '#3b82f6'
+      name: 'CV',
+      link: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view',
+      icon: <FaFileAlt />,
+      color: '#6b7280',
+      dynamicLink: {
+        ESPAÑOL: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view',
+        ENGLISH: 'https://drive.google.com/file/d/1xgaHB9gUDWfdHzpeer_jIuiCeyiFzQXY/view'
+      }
     }
   ]
 }
 
 export const ABOUT_PAGE_TEXTS = {
-  profilePicture: '/profile_picture.jpeg',
-  biographyTexts: {},
+  pageTitle: '',
+  profilePicture: '/profile_picture.png',
   skills: {
     title: '',
     skillsList: []
@@ -36,27 +45,12 @@ export const PROJECTS_PAGE_TEXTS = {
   projectsList: []
 }
 
-export const CONTACT_PAGE_TEXTS = {
-  mainTitle: '',
-  paragraph: '',
-  contactButtons: [
-    {
-      key: 'linkedin',
-      label: 'Linkedin',
-      icon: <AiFillLinkedin />,
-      href: 'https://www.linkedin.com/in/gabgarmer'
-    },
-    { key: 'email', label: 'Email', icon: <AiOutlineMail />, href: 'mailto:gabriel.garmer01@gmail.com' }
-  ]
-}
-
 export const PORTFOLIO_DEFAULT_VALUES = {
   language: 'ESPAÑOL',
   mobileMenu: false,
   content: {
     homePageText: HOME_PAGE_TEXTS,
     aboutPageText: ABOUT_PAGE_TEXTS,
-    projectsPageText: PROJECTS_PAGE_TEXTS,
-    contactPageText: CONTACT_PAGE_TEXTS
+    projectsPageText: PROJECTS_PAGE_TEXTS
   }
 }

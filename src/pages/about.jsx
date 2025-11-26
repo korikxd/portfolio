@@ -1,5 +1,5 @@
-import AboutPage from '@components/modules/AboutPage'
-import usePortfolioContext from '@lib/Context/PortfolioContext'
+import AboutPage from '@components/modules/AboutPage';
+import usePortfolioContext from '@lib/Context/PortfolioContext';
 
 const About = () => {
   const {
@@ -8,17 +8,9 @@ const About = () => {
       language
     },
     setAboutContent
-  } = usePortfolioContext()
+  } = usePortfolioContext();
 
-  return <AboutPage aboutData={aboutPageText} setAboutData={setAboutContent} language={language} />
-}
+  return <AboutPage aboutData={aboutPageText} setAboutData={setAboutContent} language={language} />;
+};
 
-export default About
-
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      data: {}
-    }
-  }
-}
+export default About;

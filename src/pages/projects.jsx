@@ -1,5 +1,5 @@
-import ProjectsPage from '@components/modules/ProjectsPage'
-import usePortfolioContext from '@lib/Context/PortfolioContext'
+import ProjectsPage from '@components/modules/ProjectsPage';
+import usePortfolioContext from '@lib/Context/PortfolioContext';
 
 const Projects = () => {
   const {
@@ -8,17 +8,9 @@ const Projects = () => {
       language
     },
     setProjectsContent
-  } = usePortfolioContext()
+  } = usePortfolioContext();
 
-  return <ProjectsPage projectsData={projectsPageText} setProjectsData={setProjectsContent} language={language} />
-}
+  return <ProjectsPage projectsData={projectsPageText} setProjectsData={setProjectsContent} language={language} />;
+};
 
-export default Projects
-
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      data: {}
-    }
-  }
-}
+export default Projects;

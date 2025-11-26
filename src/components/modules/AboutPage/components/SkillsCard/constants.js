@@ -49,7 +49,6 @@ export const SKILLS_COLLECTION = [
   { key: 'Nestjs', icon: <SiNestjs width={24} height={24} className={``} /> }
 ]
 //SPANISH TEXTS
-
 export const SKILLS_SPANISH = {
   title: 'HABILIDADES',
   skillsList: SKILLS_COLLECTION
@@ -64,7 +63,6 @@ export const LANGUAGES_SPANISH = {
 }
 
 //ENGLISH TEXTS
-
 export const SKILLS_ENGLISH = {
   title: 'SKILLS',
   skillsList: SKILLS_COLLECTION

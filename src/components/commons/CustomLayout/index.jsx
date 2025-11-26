@@ -1,20 +1,25 @@
-import Footer from '../Footer'
-import NavigationMenu from '../NavigationMenu'
+import usePortfolioContext from '@lib/Context/PortfolioContext';
+import Footer from '../Footer';
+import NavigationMenu from '../NavigationMenu';
 
 const CustomLayout = ({ children }) => {
+
+  const {
+    portfolioContent: {
+      content: { homePageText },
+      language
+    }
+  } = usePortfolioContext();
+
   return (
-    <div className={`flex flex-col h-screen`}>
-      <header className={`flex justify-end py-8`}>
-        <NavigationMenu />
-      </header>
-      <main className={`flex flex-col grow`}>
+    <div className="flex flex-col min-h-screen bg-light-background dark:bg-dark-background transition-colors duration-300">
+      <NavigationMenu />
+      <main className="flex flex-col flex-grow">
         {children}
-        <footer className={`flex flex-col items-center py-8 font-light`}>
-          <Footer />
-        </footer>
       </main>
+      <Footer socials={homePageText.socials} currentLanguage={language} />
     </div>
   )
-}
+};
 
-export default CustomLayout
+export default CustomLayout;

@@ -62,19 +62,6 @@ export const PortfolioProvider = ({ children }) => {
     })
   }
 
-  const setContactContent = (value) => {
-    setPortfolioContent({
-      ...portfolioContent,
-      content: {
-        ...portfolioContent.content,
-        contactPageText: {
-          ...portfolioContent.content.contactPageText,
-          ...value
-        }
-      }
-    })
-  }
-
   return (
     <PortfolioContext.Provider
       value={{
@@ -85,7 +72,6 @@ export const PortfolioProvider = ({ children }) => {
         setHomeContent,
         setAboutContent,
         setProjectsContent,
-        setContactContent
       }}
     >
       {children}
