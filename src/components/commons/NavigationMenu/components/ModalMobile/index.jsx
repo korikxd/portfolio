@@ -7,12 +7,15 @@ import { PAGE_ROUTES } from 'constants/routes'
 
 const ModalMobile = ({ language, setLanguage, handleMobileMenu }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="bg-opacity-70 bg-dark-background absolute inset-0"></div>
-      <div className="p-4 rounded-lg shadow-md max-w-md relative bg-firstAccent">
-        <button className="absolute top-2 right-2 p-2" onClick={handleMobileMenu}>
+    <div className="fixed inset-0 flex items-center justify-center z-50 md:hidden">
+      <div className="bg-black/50 backdrop-blur-sm absolute inset-0" onClick={handleMobileMenu}></div>
+      <div className="p-6 rounded-2xl shadow-2xl max-w-sm w-full mx-4 relative bg-light-background dark:bg-dark-background border border-light-text/10 dark:border-dark-text/10">
+        <button
+          className="absolute top-4 right-4 p-2 rounded-lg hover:bg-firstAccent/20 transition-colors"
+          onClick={handleMobileMenu}
+        >
           <svg
-            className="w-6 h-6"
+            className="w-6 h-6 text-light-text dark:text-dark-text"
             fill="none"
             stroke="currentColor"
             strokeLinecap="round"
@@ -23,22 +26,24 @@ const ModalMobile = ({ language, setLanguage, handleMobileMenu }) => {
             <path d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
-        <ul>
+        <ul className="space-y-4 mt-8">
           {PAGE_ROUTES.map((pageLink, index) => (
             <li key={index}>
               <Link
                 href={pageLink.href}
-                className={`block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0`}
-                aria-current="page"
+                className="block py-3 px-4 rounded-lg font-display text-light-text dark:text-dark-text hover:bg-firstAccent/20 hover:text-firstAccent transition-all"
+                onClick={handleMobileMenu}
               >
                 {language === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
               </Link>
             </li>
           ))}
-          <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
-          <div className="flex justify-center">
-            <ThemeButton />
-          </div>
+          <li className="pt-4 border-t border-light-text/10 dark:border-dark-text/10">
+            <div className="flex items-center justify-between gap-4">
+              <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
+              <ThemeButton />
+            </div>
+          </li>
         </ul>
       </div>
     </div>
