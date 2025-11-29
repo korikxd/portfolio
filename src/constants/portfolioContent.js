@@ -12,12 +12,12 @@ export const HOME_PAGE_TEXTS = {
     { name: 'Github', link: 'https://github.com/korikxd', icon: <SiGithub />, color: '#6b7280' },
     {
       name: 'CV',
-      link: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view',
+      link: 'https://drive.google.com/file/d/1nWw5geeoAl2U0hcHh6wJ2ML-oHXUYYaK/view',
       icon: <FaFileAlt />,
       color: '#6b7280',
       dynamicLink: {
-        ESPAÑOL: 'https://drive.google.com/file/d/1yzD73mZE1tYF1Ho08PUPios1L1w-ZAMg/view',
-        ENGLISH: 'https://drive.google.com/file/d/1xgaHB9gUDWfdHzpeer_jIuiCeyiFzQXY/view'
+        ESPAÑOL: 'https://drive.google.com/file/d/1nWw5geeoAl2U0hcHh6wJ2ML-oHXUYYaK/view',
+        ENGLISH: 'https://drive.google.com/file/d/1BiZHer8Z6kwsHUTgAXmt3elE_4c3tZTs/view'
       }
     }
   ]
