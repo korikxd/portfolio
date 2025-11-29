@@ -3,21 +3,33 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
   h1,
   h2,
-  h3 {
-    font-weight: 500;
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
   }
 
   h1 {
-    font-size: xx-large;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
   }
 
   h2 {
-    font-size: x-large;
+    @apply text-3xl md:text-4xl font-semibold;
   }
+
   h3 {
-    font-size: large;
+    @apply text-2xl md:text-3xl font-semibold;
   }
 
   .light {
@@ -28,5 +40,11 @@
   .dark {
     background: theme('colors.dark.background');
     color: theme('colors.dark.text');
+  }
+
+  /* Prevenir parpadeo durante cambio de tema */
+  .no-theme-transition,
+  .no-theme-transition * {
+    transition: none !important;
   }
 }

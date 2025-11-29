@@ -1,34 +1,56 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { IoMdMoon as MoonIcon } from 'react-icons/io'
 import { IoSunnyOutline as SunIcon } from 'react-icons/io5'
 
 const ThemeButton = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme()
-  const changeTheme = (theme) => (theme === 'dark' || resolvedTheme === 'dark' ? setTheme('light') : setTheme('dark'))
+  const { setTheme, resolvedTheme, theme } = useTheme()
+  const buttonRef = useRef(null)
+  const previousThemeRef = useRef(theme)
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (previousThemeRef.current !== theme && buttonRef.current) {
+      buttonRef.current.classList.add('no-theme-transition')
+      requestAnimationFrame(() => {
+        buttonRef.current?.classList.remove('no-theme-transition')
+      })
+      previousThemeRef.current = theme
+    }
+  }, [theme])
+
+  if (!mounted) {
+    return (
+      <button
+        aria-label="Toggle Dark Mode"
+        type="button"
+        className="h-10 w-10 rounded-lg p-2 flex items-center justify-center text-light-text dark:text-dark-text hover:bg-firstAccent/20 focus:outline-none focus:ring-2 focus:ring-firstAccent"
+        disabled
+      >
+        <MoonIcon className="text-xl" />
+      </button>
+    )
+  }
+
+  const isDark = resolvedTheme === 'dark'
 
   return (
     <button
+      ref={buttonRef}
       aria-label="Toggle Dark Mode"
       type="button"
-      className="ml-1 mr-1 h-8 w-8 rounded p-1 sm:ml-4"
-      onClick={changeTheme}
+      className="h-10 w-10 rounded-lg p-2 flex items-center justify-center text-light-text dark:text-dark-text hover:bg-firstAccent/20 focus:outline-none focus:ring-2 focus:ring-firstAccent"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        className="text-gray-900 dark:text-gray-100"
-      >
-        {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
-          <SunIcon className="fade-in text-xl" />
-        ) : (
-          <MoonIcon className="fade-in text-xl" />
-        )}
-      </svg>
+      {isDark ? (
+        <SunIcon className="text-xl transition-transform hover:rotate-180 duration-500" />
+      ) : (
+        <MoonIcon className="text-xl transition-transform hover:-rotate-12 duration-500" />
+      )}
     </button>
   )
 }

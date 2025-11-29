@@ -5,6 +5,6 @@ const nextConfig = {
       dirs: ['pages', 'components', 'lib']
    },
    env: {}
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

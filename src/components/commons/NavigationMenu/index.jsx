@@ -30,70 +30,73 @@ const NavigationMenu = () => {
 
   const handleMobileMenu = () => setMobileMenu(!mobileMenu)
 
-  const renderHomeItems = () => (
-    <>
-      <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
-      <ThemeButton />
-    </>
-  )
-
   const defaultItems = () => (
-    <ul
-      className={`font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 ${'hidden md:flex'}`}
-    >
-      {PAGE_ROUTES.map((pageLink, index) => (
-        <li className={``} key={index}>
-          <Link
-            href={pageLink.href}
-            className={`block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500`}
-            aria-current="page"
-          >
-            {language === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
-          </Link>
-        </li>
-      ))}
-      <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
-      <ThemeButton />
+    <ul className="hidden md:flex font-medium flex-row space-x-6 items-center">
+      {PAGE_ROUTES.map((pageLink, index) => {
+        const isActive = currentRoute === pageLink.href
+        return (
+          <li key={index}>
+            <Link
+              href={pageLink.href}
+              className={`relative block py-2 px-4 rounded-lg transition-all duration-300 font-display group ${
+                isActive
+                  ? 'text-firstAccent font-semibold'
+                  : 'text-light-text dark:text-dark-text hover:text-firstAccent'
+              }`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {language === 'ESPAÑOL' ? pageLink.spanishText : pageLink.englishText}
+              {(isActive || (!isActive)) && (
+                <span
+                  className={`absolute bottom-0 left-0 right-0 h-0.5 bg-firstAccent rounded-full transition-opacity duration-300 ${
+                    isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}
+                ></span>
+              )}
+            </Link>
+          </li>
+        )
+      })}
+      <li className="flex items-center gap-3 ml-4">
+        <SelectLanguage currentLanguage={language} setCurrentLanguage={setLanguage} />
+        <ThemeButton />
+      </li>
     </ul>
   )
 
   const itemsToRender = () => (
-    <nav>
-      <div className={`max-w-screen-xl flex flex-wrap items-center gap-3 mx-auto p-4`}>
-        {currentRoute !== '/' && (
-          <>
-            <button
-              data-collapse-toggle="navbar-default"
-              className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600`}
-              type="button"
-              aria-controls="navbar-default"
-              aria-expanded={mobileMenu ? 'true' : 'false'}
-              onClick={handleMobileMenu}
+    <nav className="relative z-50 backdrop-blur-md bg-light-background/80 dark:bg-dark-background/80 shadow-sm">
+      <div className="flex items-center justify-end gap-3 px-4 md:px-8 py-4">
+        <div className="flex items-center gap-4">
+          <button
+            data-collapse-toggle="navbar-default"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden text-light-text dark:text-dark-text hover:bg-firstAccent/20 focus:outline-none focus:ring-2 focus:ring-firstAccent transition-colors"
+            type="button"
+            aria-controls="navbar-default"
+            aria-expanded={mobileMenu ? 'true' : 'false'}
+            onClick={handleMobileMenu}
+          >
+            <svg
+              className="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
             >
-              <svg
-                className={`w-5 h-5`}
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-            {mobileMenu && (
-              <ModalMobile language={language} setLanguage={setLanguage} handleMobileMenu={handleMobileMenu} />
-            )}
-          </>
-        )}
-        <div className={`md:flex items-center justify-center ${mobileMenu ? 'hidden' : 'block'} `}>
-          {currentRoute === '/' ? renderHomeItems() : defaultItems()}
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div className="md:flex items-center justify-center">{defaultItems()}</div>
         </div>
+        {mobileMenu && (
+          <ModalMobile language={language} setLanguage={setLanguage} handleMobileMenu={handleMobileMenu} />
+        )}
       </div>
     </nav>
   )
